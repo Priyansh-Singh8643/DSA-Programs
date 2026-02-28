@@ -1,0 +1,31 @@
+import java.util.Deque;
+import java.util.LinkedList;
+
+class StackUsingDeque 
+{
+	public static void main(String[] args) 
+	{
+		Deque<Integer> stack=new LinkedList<>();
+		
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		stack.push(4);
+		stack.push(5);
+		
+		for (int s:stack )
+		{
+			System.out.print(s);
+		}
+		System.out.println();
+		
+		System.out.println(stack.peek());
+		System.out.println(stack.pop());
+		
+		/*Here we can't use get() and remove() because it is following the stack strictly. */
+		
+		/* System.out.println(stack.get(2));
+		System.out.println(stack.remove(2)); */
+		
+	}
+}

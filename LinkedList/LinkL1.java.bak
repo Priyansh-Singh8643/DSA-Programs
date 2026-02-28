@@ -1,0 +1,57 @@
+class Node 
+{
+	int data;
+	Node next;
+	
+	Node(int value)
+	{
+		data=value;
+		next=null;
+	}
+}
+
+class LinkedList
+{
+	Node head;
+	
+	LinkedList()
+	{
+		head=null;
+	}
+	
+	void insertBeginning(int value)
+	{
+		Node newNode=new Node(value);
+		newNode.next=head;
+		head=newNode;
+	}
+	
+	void display()
+	{
+		Node temp=head;
+		
+		while(temp!=null)
+		{
+			System.out.print(temp.data+"->");
+			temp=temp.next;
+		}
+		System.out.println("NULL");
+	}
+		
+}
+
+class LinkL1
+{
+
+	public static void main(String args[])
+	{
+		LinkedList ll=new LinkedList();
+		
+		ll.insertBeginning(10);
+		ll.display();
+		ll.insertBeginning(20);
+		ll.display();
+		ll.insertBeginning(30);
+		ll.display();
+	}
+}

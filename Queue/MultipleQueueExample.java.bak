@@ -1,0 +1,27 @@
+//Multiple Queue
+
+import java.util.Queue;
+import java.util.LinkedList;
+
+class  MultipleQueueExample
+{
+	public static void main(String[] args) 
+	{
+		Queue<Integer> list1=new LinkedList<>();
+		Queue<Integer> list2=new LinkedList<>();
+		
+		list1.add(12);
+		list1.add(11);
+		list1.add(32);
+		
+		list2.add(24);
+		list2.add(17);
+		list2.add(82);
+		
+		Queue<Queue> queue=new LinkedList<>();
+		queue.add(list1);
+		queue.add(list2);
+		
+		System.out.println(queue);
+	}
+}

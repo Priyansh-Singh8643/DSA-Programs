@@ -1,0 +1,14 @@
+import java.util.ArrayList;
+
+class Rev1 
+{
+	public static void main(String[] args) 
+	{
+		ArrayList al=new ArrayList();
+		
+		al.add(new Integer(5));
+		al.add(new Float(11.67f));
+		al.add(new String("Priyansh"));
+		System.out.println(al);
+	}
+}

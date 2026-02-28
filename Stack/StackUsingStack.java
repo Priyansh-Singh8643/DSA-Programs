@@ -1,0 +1,28 @@
+import java.util.Stack;
+
+class StackUsingStack 
+{
+	public static void main(String[] args) 
+	{
+		Stack<Integer> stack=new Stack<>();
+		
+		stack.push(1);
+		stack.push(2);
+		stack.push(3);
+		
+		for (int s:stack)
+		{
+			System.out.print(s+" ");
+		}
+		System.out.println();
+		
+		System.out.println(stack.peek());
+		System.out.println(stack.pop());
+		
+		
+		/*This two methods can be used here but can't be used when 
+		working with linkedlist object in Deque through DPA */
+		System.out.println(stack.get(1));
+		System.out.println(stack.remove(1));
+	}
+}

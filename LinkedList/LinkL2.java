@@ -1,0 +1,137 @@
+
+// With all the deleteMethods as well
+
+class Node
+{
+	int data;
+	Node next;
+	
+	Node(int value)
+	{
+		data = value;
+		next = null;
+	}
+}
+
+class LinkedList
+{
+	Node head;
+	
+	LinkedList()
+	{
+		head=null;
+	}
+	
+	void insertBeginning(int value)
+	{
+		Node newNode=new Node(value);
+		newNode.next=head;
+		head=newNode;
+	}
+	
+	void insertEnd(int value)
+	{
+		Node newNode=new Node(value);
+		
+		if(head==null)
+		{
+			newNode.next=null;
+			return;
+		}
+		
+		Node temp;
+		temp=head;
+		
+		while(temp.next!=null)
+		{
+			temp=temp.next;
+		}
+		temp.next=newNode;
+	}
+	
+	void insertPosition(int value, int pos)
+	{
+		if(pos==1)
+		{
+			insertBeginning(value);
+		}
+		
+		Node newNode=new Node(value);
+		Node temp=head;
+		
+		for (int i=1;i<pos-1&&temp!=null;i++)
+		{
+			temp=temp.next;
+		}
+		
+		if (temp==null)
+		{
+			System.out.println("Position out of range");
+		}
+		newNode.next=temp.next;
+		temp.next=newNode;
+	}
+	
+	void display()
+	{
+		Node temp;
+		temp = head;
+		
+		while(temp!=null)
+		{
+			System.out.print(temp.data+"->");
+			temp=temp.next;
+		}
+		System.out.println("NULL");
+	}
+	
+	void deleteBeginning()
+	{
+		head=head.next;
+	}
+	
+	void deleteEnd()
+	{
+		Node temp=head;
+		
+		while(temp.next.next!=null)
+		{
+			temp=temp.next;
+		}
+		temp.next=null;
+	}
+	
+	void deletePostion(int pos)
+	{
+		Node temp=head;
+		
+		for(int i=1;i<pos-2&&temp!=null;i++)
+		{
+			temp=temp.next;
+		}
+		temp.next=temp.next.next;
+	}
+		
+		
+}
+
+class LinkL2 
+{
+	public static void main(String[] args) 
+	{
+		LinkedList ll=new LinkedList();
+		ll.insertBeginning(22);
+		ll.insertBeginning(12);
+		ll.display();
+		ll.insertEnd(65);
+		ll.display();
+		ll.insertPosition(15,2);
+		ll.display();
+		ll.deleteBeginning();
+		ll.display();
+		ll.deleteEnd();
+		ll.display();
+		ll.deletePostion(3);
+		ll.display();
+	}
+}
