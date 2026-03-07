@@ -1,0 +1,48 @@
+//For Removing the Duplicates from the Array
+
+import java.util.Scanner;
+
+class RemoveDuplicatesSortedArray 
+{
+	public static int removeDuplicates(int[] nums)
+	{
+		if(nums.length==0) return 0;
+		
+		int i=0;
+		
+		for (int j=1;j<nums.length;j++)
+		{
+			if(nums[j]!=nums[i])
+			{
+				i++;
+				nums[i]=nums[j];
+			}
+		}
+		return i+1;
+	}
+	
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.print("Enter the size of Array :- ");
+		int size=sc.nextInt();
+		int nums[]=new int[size];
+		
+		System.out.println("\nEnter the Elements of Array :- ");
+		for (int i=0;i<nums.length;i++)
+		{
+			nums[i]=sc.nextInt();
+		}
+		
+		int newLength=removeDuplicates(nums);
+		
+		System.out.println("Array after removing duplicates :- \n");
+		
+		for(int i=0;i<newLength;i++)
+		{
+			System.out.print(nums[i]+"	");
+		}
+		System.out.println("\n");
+	}
+}

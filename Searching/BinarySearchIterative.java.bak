@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+class BinarySearchIterative 
+{
+	public static int binarySearch(int[] arr,int key)
+	{
+		int low = 0;
+		int high = arr.length-1;
+		
+		while(low<=high)
+		{	
+			// safer than (low+high)/2
+			int mid = low + (high - low)/2; 
+			
+			if(arr[mid] == key)
+			{
+				return mid;	//element found
+			}
+			else if(arr[mid] < key)
+			{
+				low = mid + 1;	//Search in right half
+			}
+			else if(arr[mid] > key)
+			{
+				high = mid - 1; //Search in left half
+			}
+		}
+		return -1;	//element not found
+	}
+		
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.print("Enter the size of Array :- ");
+		int size=sc.nextInt();
+		
+		System.out.println("\nEnter the elements of Array :- ");
+		int arr[]=new int[size];
+		
+		for (int i=0;i<arr.length;i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+		
+		System.out.print("\nEnter the element to find :- ");
+		int key = sc.nextInt();
+		
+		int result=binarySearch(arr,key);
+		
+		if(result!=-1)
+			System.out.println("\nElement found at index : "+result+"\n");
+		else
+			System.out.println("\nElement not found");
+	}
+}

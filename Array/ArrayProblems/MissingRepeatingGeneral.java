@@ -1,0 +1,40 @@
+import java.util.HashSet;
+import java.util.ArrayList;
+
+class MissingRepeatingGeneral 
+{
+	public static void main(String[] args) 
+	{
+	int[] arr = {22,33,33,56,89,90,90};
+	
+	HashSet<Integer> set = new HashSet<>();
+	int repeating = -1;
+	
+	int min = arr[0];
+	int max = arr[0];
+	
+	//Step 1: Find repeating and min/max
+	for (int num:arr)
+	{
+		if(set.contains(num))
+		{
+			repeating=num; //duplicate found
+		}else{
+			set.add(num);
+		}
+		if (num < min) min=num;
+		if (num > max) max=num;
+	}
+	
+	ArrayList<Integer> missing=new ArrayList<>();
+	for (int i=min;i<=max;i++)
+	{
+		if(!set.contains(i)){
+			missing.add(i);
+		}
+	}
+	
+	System.out.println("Repeating Number : "+repeating);
+	System.out.println("Missing numbers in range "+min +"to "+max+" :"+missing);
+	}
+}

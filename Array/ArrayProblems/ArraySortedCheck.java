@@ -1,0 +1,65 @@
+// Check that is Array sorted or not?
+
+import java.util.Scanner;
+
+class ArraySortedCheck 
+{
+	public static String isSorted(int arr[])
+	{
+		boolean ascending=true;
+		boolean descending=true;
+		
+		for (int i=0;i<arr.length-1;i++)
+		{
+			if(arr[i]>arr[i+1])
+			{
+				ascending=false;
+			}
+			if(arr[i]<arr[i+1])
+			{
+				descending=false;
+			}
+		}
+			
+			if(ascending && descending)
+			{
+				return "All the elements of Array are same";
+			}
+			else if(ascending)
+			{
+				return "Array is Sorted in Ascending Order";
+			}
+			else if (descending)
+			{
+				return "Array is Sorted in Descending Order";
+			}
+			else{
+				return "Array is not Sorted";
+			}
+				
+	}
+		
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.print("Enter the Array Size :- ");
+		int size=sc.nextInt();
+		
+		System.out.println("\n");
+		
+		int[] arr=new int[size];
+		
+		System.out.print("Enter the elements of Array :- ");
+		for (int i=0;i<arr.length;i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+		System.out.println("\n");
+		
+		String result=isSorted(arr);
+		System.out.println(result);
+		
+		sc.close();
+	}
+}
