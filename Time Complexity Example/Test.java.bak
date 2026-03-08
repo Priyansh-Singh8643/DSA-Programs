@@ -1,5 +1,3 @@
-//The time complexity of this program would be order of (n square).
-
 import java.util.Scanner;
 
 class  Test

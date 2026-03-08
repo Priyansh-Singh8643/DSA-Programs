@@ -1,0 +1,32 @@
+//Time complexity of the this program would be order of (n).
+
+import java.util.Scanner;
+
+class PrimeNumber 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.print("Enter the Number : ");
+		int n=sc.nextInt();
+		
+		int prime =0;
+		
+		for (int i=2;i<n;i++)
+		{
+			if (n%i==0)
+			{
+				prime=1;
+			}
+		}
+		
+		if (prime==1)
+		{
+			System.out.println("Number is not Prime. ");
+		}
+		else{
+			System.out.println("Number is Prime. ");
+		}
+	}
+}
