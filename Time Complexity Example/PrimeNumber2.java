@@ -1,3 +1,6 @@
+// Time complexity of this code would be order of (root n)
+// It is optimized because of i*i<n and break statement
+
 import java.util.Scanner;
 
 class PrimeNumber2 

@@ -8,6 +8,7 @@ class PrimeNumber2
 		
 		System.out.print("Enter Number : ");
 		int n=sc.nextInt();
+		int prime=0;
 		
 		for (int i=2;i*i<n;i++)
 		{
