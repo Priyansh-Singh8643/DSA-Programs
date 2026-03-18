@@ -9,9 +9,21 @@ class  TowerOfHanoi
 			System.out.printf("Move disk from rod %c to %c%n",source,dest);
 			return;
 		}
+		
+		solve(n-1,source,dest,aux);
+		
+		//System.out.printf("Move disk %d from rod %c to rod %c%n",n,source,dest);
+		
+		//solve(n-1, aux, source, dest);
 	}
 	public static void main(String[] args) 
 	{
-		System.out.printf("Hello this is No %d",5);
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the number of disks : ");
+		int n=sc.nextInt();
+		solve(n,'S','A','D');
+		
+		sc.close();
 	}
 }
